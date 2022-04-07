@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice Vue.js</title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <h1>Hello from HTML!</h1>
+  <div id="app">
+    <h1>{{ message }}</h1>
+
+    <div>
+      title:
+      <input type="text" v-model="newMovieParams.title" />
+      <br />
+      year:
+      <input type="text" v-model="newMovieParams.year" />
+      <br />
+      plot:
+      <input type="text" v-model="newMovieParams.plot" />
+      <br />
+      director:
+      <input type="text" v-model="newMovieParams.director" />
+    </div>
+
+    <button @click="moviesCreate">Create movie</button>
+
+    <div v-for="movie in movies">
+     <h1> {{ movie.title }} </h1>
+     <h2> {{movie.plot}} </h2>
+    </div>
+    <div v-if="containsZoolander">
+      <img src="https://i.ibb.co/59C7PD9/zoolander.jpg">
+    </div>
+  </div>
+</body>
+<style>
+  img {
+    width: 100px;
+  }
+</style>
+</html>
